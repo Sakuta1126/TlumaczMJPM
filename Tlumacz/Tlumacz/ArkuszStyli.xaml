@@ -2,5 +2,90 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Tlumacz.ArkuszStyli">
+   
+
     
-</ResourceDictionary>
+        <Style x:Key="Naglowek" TargetType="Label">
+            <Setter Property="Text" Value="Verso"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+            <Setter Property="TextColor" Value="White"/>
+        </Style>
+
+       
+        <LinearGradientBrush x:Key="KolorTlaObramowanieGorne" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#1B2C67" Offset="0" />
+            <GradientStop Color="#141F47" Offset="1" />
+        </LinearGradientBrush>
+
+        <Style x:Key="ObramowanieGorne" TargetType="Frame">
+            <Setter Property="HasShadow" Value="False" />
+            <Setter Property="Margin" Value="20,10,20,10" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="Background" Value="{StaticResource KolorTlaObramowanieGorne}" />
+        </Style>
+
+        <Style x:Key="TekstNaglowkowyObramowanieGorne" TargetType="Label">
+            <Setter Property="TextColor" Value="White"></Setter>
+            <Setter Property="Text" Value="Tekst tłumaczony"/>
+        </Style>
+
+        <Style x:Key="TekstWpisywanyObramowanieGorne" TargetType="Entry">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="WidthRequest" Value="400"/>
+            <Setter Property="HeightRequest" Value="200"/>
+        </Style>
+
+       
+        <LinearGradientBrush x:Key="KolorTlaObramowanieSrodkowe" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#556BBE" Offset="0" />
+            <GradientStop Color="#141F47" Offset="1" />
+        </LinearGradientBrush>
+
+        <Style x:Key="ObramowanieSrodkowe" TargetType="Frame">
+            <Setter Property="HasShadow" Value="False"/>
+            <Setter Property="Margin" Value="20,10,20,10"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="Background" Value="{StaticResource KolorTlaObramowanieSrodkowe}" />
+        </Style>
+
+        <Style x:Key="TekstNaglowkowyObramowanieSrodkowe" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="Text" Value="Tekst przetłumaczony"/>
+        </Style>
+
+        <Style x:Key="TekstPrzetlumaczonyObramowanieSrodkowe" TargetType="Label">
+            <Setter Property="TextColor" Value="White"/>
+            <Setter Property="WidthRequest" Value="400"/>
+            <Setter Property="HeightRequest" Value="200"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+       
+        <Style x:Key="ObramowanieDolne" TargetType="Frame">
+            <Setter Property="HasShadow" Value="False"></Setter>
+            <Setter Property="Margin" Value="20,10,20,10"></Setter>
+            <Setter Property="CornerRadius" Value="20"></Setter>
+            <Setter Property="BackgroundColor" Value="#1A254F"></Setter>
+            <Setter Property="Padding" Value="0"></Setter>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+        </Style>
+
+        <Style x:Key="PrzyciskZMianyJezykowObramowanieDolne" TargetType="Button">
+            <Setter Property="WidthRequest" Value="60"></Setter>
+            <Setter Property="HeightRequest" Value="60"></Setter>
+            <Setter Property="CornerRadius" Value="90"></Setter>
+            <Setter Property="BackgroundColor" Value="#152F8D"></Setter>
+            <Setter Property="ImageSource" Value="strzalki.png"></Setter>
+        </Style>
+
+        <Style x:Key="ListaJezykowObramowanieDolne" TargetType="Picker">
+            <Setter Property="TitleColor" Value="White"></Setter>
+            <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+        </Style>
+
+    </ResourceDictionary>

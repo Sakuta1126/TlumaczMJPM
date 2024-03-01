@@ -1,12 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Tlumacz.StronaGlowna">
+             x:Class="Tlumacz.StronaGlowna" Background="#141f47">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Style="{StaticResource Naglowki}"></Label>
+            <Frame Style="{StaticResource ObramowanieGorne}">
+            <StackLayout>
+                    <Label Style="{StaticResource TekstNaglowkowyObramowanieGorne}"></Label>
+                    <Entry Style="{StaticResource TekstWpisywanyObramowanieGorne}" x:Name="WprowadzaonyTekst" TextChanged="WprowadzonoTekst"></Entry>
+            </StackLayout>
+            </Frame>
+            <Frame Style="{StaticResource ObramowanieSrodkowe}">
+                <StackLayout>
+                    <Label Style="{StaticResource TekstNaglowkowyObramowanieSrodkowe}"></Label>
+                    <Label Style="{StaticResource TekstPrzetlumaczonyObramowanieSrodkowe}" x:Name="PrzetlumaczonyTekst"></Label>
+                </StackLayout>
+            </Frame>
+            <Frame Style="{StaticResource ObramowanieDolne}">
+                <StackLayout Orientation="Horizontal">
+                    <Picker Style="{StaticResource ListaJezykowObramowanieDolne}" x:Name="JezykZrodlowy" Title="Jezyk zrodlowy" SelectedIndex="0">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Polski</x:String>
+                                <x:String>Angielski</x:String>
+                                <x:String>Niemiecki</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Button Style="{StaticResource PrzyciskZMianyJezykowObramowanieDolne}" Clicked="ZmienionoJezyk"></Button>
+                    <Picker Style="{StaticResource ListaJezykowObramowanieDolne}" x:Name="JezykDocelowy" Title="Jezyk docelowy" SelectedIndex="1">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Polski</x:String>
+                                <x:String>Angielski</x:String>
+                                <x:String>Niemiecki</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
