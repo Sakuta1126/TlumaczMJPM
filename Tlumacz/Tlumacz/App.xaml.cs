@@ -10,7 +10,7 @@ namespace Tlumacz
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new StronaGlowna();
         }
 
         protected override void OnStart()
