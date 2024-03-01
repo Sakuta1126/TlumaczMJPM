@@ -4,11 +4,11 @@
              x:Class="Tlumacz.StronaGlowna" Background="#141f47">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-            <Label Style="{StaticResource Naglowki}"></Label>
+            <Label Style="{StaticResource Naglowek}"></Label>
             <Frame Style="{StaticResource ObramowanieGorne}">
             <StackLayout>
                     <Label Style="{StaticResource TekstNaglowkowyObramowanieGorne}"></Label>
-                    <Entry Style="{StaticResource TekstWpisywanyObramowanieGorne}" x:Name="WprowadzonyTekst" TextChanged="WprowadzonoTekst"></Entry>
+                    <Entry Style="{StaticResource TekstWpisywanyObramowanieGorne}" x:Name="WprowadzanyTekst" TextChanged="WprowadzonoTekst"></Entry>
             </StackLayout>
             </Frame>
             <Frame Style="{StaticResource ObramowanieSrodkowe}">

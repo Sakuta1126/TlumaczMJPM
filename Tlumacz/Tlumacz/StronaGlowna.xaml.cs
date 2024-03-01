@@ -64,6 +64,8 @@ namespace Tlumacz
             jezykDocelowy = (jezykDocelowy == "Polski") ? "pl" : ((jezykDocelowy == "Angielski") ? "en" : ((jezykDocelowy == "Niemiecki") ? "de" : jezykDocelowy));
             return (jezykDocelowy == jezykWpisany) ? "Wybierz 2 inne języki." : await RozpocznijTlumaczenie(tekst, jezykWpisany, jezykDocelowy);
         }
+
+
         private async void WprowadzonoTekst(object sender, TextChangedEventArgs e)
         {
             if (string.IsNullOrEmpty(JezykZrodlowy.SelectedItem as string) || string.IsNullOrEmpty(JezykDocelowy.SelectedItem as string))
@@ -76,13 +78,13 @@ namespace Tlumacz
             }
         }
 
-        public async void ZmienionoJezyk(object sender, TextChangedEventArgs e)
+        public async void ZmienionoJezyk(object sender, EventArgs e)
         {
-            if(JezykZrodlowy.SelectedIndex != null && JezykDocelowy.SelectedIndex)
+            if (JezykZrodlowy.SelectedIndex != null && JezykDocelowy.SelectedIndex != null)
             {
                 int zaznaczony = JezykZrodlowy.SelectedIndex;
-                JezykDocelowy.SelectedIndex = JezykZrodlowy.SelectedIndex;
-                JezykZrodlowy.SelectedIndex = zaznaczony;
+                JezykZrodlowy.SelectedIndex = JezykDocelowy.SelectedIndex;
+                JezykDocelowy.SelectedIndex = zaznaczony;
 
                 PrzetlumaczonyTekst.Text = await PrzetlumaczTekst(WprowadzanyTekst.Text, JezykZrodlowy.SelectedItem as string, JezykDocelowy.SelectedItem as string);
             }
