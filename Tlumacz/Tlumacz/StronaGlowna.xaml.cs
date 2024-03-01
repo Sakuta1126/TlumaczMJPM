@@ -74,5 +74,22 @@ namespace Tlumacz
                 PrzetlumaczonyTekst.Text = await PrzetlumaczTekst(WprowadzanyTekst.Text, JezykZrodlowy.SelectedItem as string, JezykDocelowy.SelectedItem as string);
             }
         }
+
+        public async void ZmienionoJezyk(object sender, TextChangedEventArgs e)
+        {
+            if(JezykZrodlowy.SelectedIndex != null && JezykDocelowy.SelectedIndex)
+            {
+                int zaznaczony = JezykZrodlowy.SelectedIndex;
+                JezykDocelowy.SelectedIndex = JezykZrodlowy.SelectedIndex;
+                JezykZrodlowy.SelectedIndex = zaznaczony;
+
+                PrzetlumaczonyTekst.Text = await PrzetlumaczTekst(WprowadzanyTekst.Text, JezykZrodlowy.SelectedItem as string, JezykDocelowy.SelectedItem as string);
+            }
+            else
+            {
+                PrzetlumaczonyTekst.Text = "Błąd przy wyborze języków.";
+            }
+        }
+
     }
 }
