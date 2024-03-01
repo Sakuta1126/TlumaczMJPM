@@ -54,7 +54,7 @@ namespace Tlumacz
             }
             catch
             {
-                return "Błąd w czasie tłumaczenia.";
+                return "Błąd w czasie tłumaczenia. Może być spowodowany brakiem dostępu do internetu.";
             }
         }
         private async Task<string> PrzetlumaczTekst(string tekst, string jezykWpisany, string jezykDocelowy)
