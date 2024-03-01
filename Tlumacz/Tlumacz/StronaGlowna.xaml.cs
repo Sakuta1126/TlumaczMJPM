@@ -91,13 +91,5 @@ namespace Tlumacz
                 PrzetlumaczonyTekst.Text = "Błąd przy wyborze języków.";
             }
         }
-
-
-
-        private void WprowadzaonyTekst_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
     }
 }
