@@ -16,5 +16,10 @@ namespace Tlumacz
         {
             InitializeComponent();
         }
+
+        private void WprowadzaonyTekst_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
