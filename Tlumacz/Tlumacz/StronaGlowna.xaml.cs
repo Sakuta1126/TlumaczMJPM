@@ -18,6 +18,7 @@ namespace Tlumacz
         {
             InitializeComponent();
         }
+
         private const string KluczApi = "AIzaSyBEAMc2DxP4MFiXFyRIWUuzkYy_5RXoki4";
         public class OdpowiedzTlumaczaGoogle
         {
@@ -89,6 +90,13 @@ namespace Tlumacz
             {
                 PrzetlumaczonyTekst.Text = "Błąd przy wyborze języków.";
             }
+        }
+
+
+
+        private void WprowadzaonyTekst_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
 
     }
