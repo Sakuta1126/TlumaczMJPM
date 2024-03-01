@@ -8,7 +8,7 @@
             <Frame Style="{StaticResource ObramowanieGorne}">
             <StackLayout>
                     <Label Style="{StaticResource TekstNaglowkowyObramowanieGorne}"></Label>
-                    <Entry Style="{StaticResource TekstWpisywanyObramowanieGorne}" x:Name="WprowadzaonyTekst" TextChanged="WprowadzonoTekst"></Entry>
+                    <Entry Style="{StaticResource TekstWpisywanyObramowanieGorne}" x:Name="WprowadzonyTekst" TextChanged="WprowadzonoTekst"></Entry>
             </StackLayout>
             </Frame>
             <Frame Style="{StaticResource ObramowanieSrodkowe}">
