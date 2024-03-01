@@ -34,7 +34,7 @@ namespace Tlumacz
             [JsonProperty("translatedText")]
             public string PrzetlumaczonyTekst { get; set; }
         }
-        async Task<string> RozpocznijTlumaczenie(string jezykWpisany, string jezykDocelowy,string tekst)
+        async Task<string> RozpocznijTlumaczenie(string tekst, string jezykWpisany, string jezykDocelowy)
         {
             try
             {
@@ -55,6 +55,23 @@ namespace Tlumacz
             catch
             {
                 return "Błąd w czasie tłumaczenia.";
+            }
+        }
+        private async Task<string> PrzetlumaczTekst(string tekst, string jezykWpisany, string jezykDocelowy)
+        {
+            jezykWpisany = (jezykWpisany == "Polski") ? "pl" : ((jezykWpisany == "Angielski") ? "en" : ((jezykWpisany == "Niemiecki") ? "de" : jezykWpisany));
+            jezykDocelowy = (jezykDocelowy == "Polski") ? "pl" : ((jezykDocelowy == "Angielski") ? "en" : ((jezykDocelowy == "Niemiecki") ? "de" : jezykDocelowy));
+            return (jezykDocelowy == jezykWpisany) ? "Wybierz 2 inne języki." : await RozpocznijTlumaczenie(tekst, jezykWpisany, jezykDocelowy);
+        }
+        private async void WprowadzonoTekst(object sender, TextChangedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(JezykZrodlowy.SelectedItem as string) || string.IsNullOrEmpty(JezykDocelowy.SelectedItem as string))
+            {
+                PrzetlumaczonyTekst.Text = "Wybierz język.";
+            }
+            else
+            {
+                PrzetlumaczonyTekst.Text = await PrzetlumaczTekst(WprowadzanyTekst.Text, JezykZrodlowy.SelectedItem as string, JezykDocelowy.SelectedItem as string);
             }
         }
     }
